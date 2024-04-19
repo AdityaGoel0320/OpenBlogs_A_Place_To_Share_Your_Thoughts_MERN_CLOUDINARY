@@ -1,9 +1,9 @@
 export const AppName = "OpenBlogs"
 // export const BackendUrl = "http://localhost:7777"
-export const BackendUrl = "https://openblogs-a-place-to-share-your-thoughts.onrender.com"
-// export const BackendUrl = "https://blog-mern-app-with-cloudinary.onrender.com"
-// export const FrontendUrl = "http://localhost:5174"
-export const FrontendUrl = "https://open-blogs-a-place-to-share-your-thoughts-mern-cloudinary-qisj.vercel.app"
+// export const BackendUrl = "https://openblogs-a-place-to-share-your-thoughts.onrender.com"
+export const BackendUrl = "https://blog-mern-app-with-cloudinary.onrender.com"
+// export const FrontendUrl = "http://lo/calhost:5174"
+// export const FrontendUrl = "https://open-blogs-a-place-to-share-your-thoughts-mern-cloudinary-qisj.vercel.app"
 // export const FrontendUrl = "https://blog-mern-app-with-cloudinary.vercel.app"
 
 

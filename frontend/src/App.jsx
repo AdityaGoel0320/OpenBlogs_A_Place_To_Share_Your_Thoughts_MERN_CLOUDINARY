@@ -48,17 +48,15 @@ const App = () => {
     };
     const fetchBlogs = async () => {
       try {
-        let url = `${BackendUrl}/api/v1/blog/all`
-
-        const { data } = await axios.get(
-          url,
-          { withCredentials: true }
-        );
+        let url = `${BackendUrl}/api/v1/blog/all`;
+    
+        const { data } = await axios.get(url, { withCredentials: true });
         setBlogs(data.allBlogs);
       } catch (error) {
         setBlogs([]);
       }
     };
+    
     fetchUser();
     fetchBlogs();
   }, [isAuthenticated, user]);
