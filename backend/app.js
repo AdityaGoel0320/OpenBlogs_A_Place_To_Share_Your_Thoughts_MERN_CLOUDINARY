@@ -13,12 +13,11 @@ dotenv.config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: 'https://openblogs-a-place-to-share-your-thoughts.onrender.com',
+    origin: [process.env.FRONTEND_URL],
     methods: ["GET", "PUT", "DELETE", "POST"],
     credentials: true,
   })
 );
-
 
 app.use(cookieParser());
 app.use(express.json());
