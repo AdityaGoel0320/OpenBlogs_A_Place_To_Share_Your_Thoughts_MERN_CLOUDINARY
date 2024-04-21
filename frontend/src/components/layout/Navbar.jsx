@@ -5,7 +5,7 @@ import { MdDarkMode, MdClose } from "react-icons/md"; // Import the MdClose icon
 import { CiLight } from "react-icons/ci";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { AppName, BackendUrl } from "../../assets/FrontendUtils";
+import { AppName, BackendUrl, FrontendUrl } from "../../assets/FrontendUtils";
 import { Context } from "../../main";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar state
   };
 
-  const isDashboard = useLocation("http://localhost:5173/dashboard");
+  const isDashboard = useLocation(`${FrontendUrl}/dashboard`);
 
   const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
 

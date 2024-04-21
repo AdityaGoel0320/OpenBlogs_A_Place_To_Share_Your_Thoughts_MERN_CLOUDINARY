@@ -49,14 +49,14 @@ const App = () => {
     const fetchBlogs = async () => {
       try {
         let url = `${BackendUrl}/api/v1/blog/all`;
-    
+
         const { data } = await axios.get(url, { withCredentials: true });
         setBlogs(data.allBlogs);
       } catch (error) {
         setBlogs([]);
       }
     };
-    
+
     fetchUser();
     fetchBlogs();
   }, [isAuthenticated, user]);
@@ -75,8 +75,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<SingleBlog />} />
-          <Route path="/author/:authorId" element={<ParticularAuthorProfile/>} />
           <Route path="/about" element={<About />} />
+          <Route path="/author/:authorId" element={<ParticularAuthorProfile />} />
           <Route path="/aboutUser" element={<AboutUser />} />
           <Route path="/authors" element={<AllAuthors />} />
           <Route path="/dashboard" element={<Dashboard />} />
