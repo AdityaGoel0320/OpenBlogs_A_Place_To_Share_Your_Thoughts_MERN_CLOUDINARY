@@ -87,7 +87,7 @@ export const login = catchAsyncErrors(async (req, res, next) => {
 export const logout = (req, res, next) => {
   res
     .status(200)
-    .clearCookie("token", { path: "/" })
+    .clearCookie("token", { path: process.env.FRONTEND_URL })
     .json({
       success: true,
       message: "User logged out!",
