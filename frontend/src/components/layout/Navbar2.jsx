@@ -41,14 +41,19 @@ function Navbar() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      let url = `${BackendUrl}/api/v1/user/logout`
+      let url = `${BackendUrl}/api/v1/user/logout`;
       const { data } = await axios.get(
         url,
         { withCredentials: true }
       );
-      setIsAuthenticated(false);
-      toast.success(data.message);
-      navigateTo("/");
+      if (data.success) {
+        setIsAuthenticated(false); // Update isAuthenticated state to false
+        toast.success(data.message);
+        navigateTo("/");
+      } else {
+        // Handle unsuccessful logout
+        toast.error(data.message);
+      }
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -146,17 +151,17 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" onClick={handleNavbar}  activeClassName="active">
+            <NavLink to="/blogs" onClick={handleNavbar} activeClassName="active">
               ALL BLOGS
             </NavLink>
           </li>
           <li>
-            <NavLink to="/authors" onClick={handleNavbar}  activeClassName="active">
+            <NavLink to="/authors" onClick={handleNavbar} activeClassName="active">
               ALL AUTHORS
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" onClick={handleNavbar}  activeClassName="active">
+            <NavLink to="/about" onClick={handleNavbar} activeClassName="active">
               ABOUT US
             </NavLink>
           </li>
@@ -167,7 +172,7 @@ function Navbar() {
         {/* <a className="btn"></a> */}
 
 
-{/* toggle button */}
+        {/* toggle button */}
 
         {/* <button
           onClick={() => mode === "light" ? setMode("dark") : setMode("light")}
