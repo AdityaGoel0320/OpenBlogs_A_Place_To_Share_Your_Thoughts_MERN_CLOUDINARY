@@ -5,8 +5,8 @@ export const sendToken = (user, statusCode, message, res) => {
       Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    path: process.env.FRONTEND_URL, // Set the path as needed for your application
     secure: true,
+    path: "/", // Set the path as needed for your application
     // Add more options as needed, e.g., secure: true for HTTPS
   };
   res.status(statusCode).cookie("token", token, options).json({

@@ -83,16 +83,28 @@ export const login = catchAsyncErrors(async (req, res, next) => {
 
 });
 
-
 export const logout = (req, res, next) => {
-  res
-    .status(200)
-    .clearCookie("token", { path: process.env.FRONTEND_URL })
-    .json({
-      success: true,
-      message: "User logged out!",
-    });
+  try {
+    console.log("Backend logout function running");
+
+    // Clear the "token" cookie
+    res.clearCookie("token", { path: "/" });
+
+    // Send a success response
+    res.status(200).send("User logged out from the app!");
+
+
+    console.log("Backend logout function running and cookie is removed");
+
+  } catch (error) {
+    // If an error occurs, log it to the terminal
+    console.error("Error during logout:", error);
+
+    // Send an error response
+    res.status(500).send("An error occurred during logout");
+  }
 };
+
 
 
 export const getMyProfile = catchAsyncErrors((req, res, next) => {

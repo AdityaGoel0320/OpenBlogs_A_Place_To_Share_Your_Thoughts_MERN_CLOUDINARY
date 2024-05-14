@@ -38,26 +38,56 @@ function Navbar() {
   const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
 
   const navigateTo = useNavigate();
+
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
       let url = `${BackendUrl}/api/v1/user/logout`;
-      const { data } = await axios.get(
+      const response = await axios.get(
         url,
         { withCredentials: true }
       );
-      if (data.success) {
+      if (response.data.success) {
         setIsAuthenticated(false); // Update isAuthenticated state to false
-        toast.success(data.message);
-        navigateTo("/");
+        toast.success(response.data.message);
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+
+        console.log(isAuthenticated)
+        console.log(response.data.message)
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        console.log("-----------------------------")
+        navigateTo("/about");
       } else {
+        console.log("Error: " + response.data.message); // Log error message
         // Handle unsuccessful logout
-        toast.error(data.message);
+        // Example: toast.error(response.data.message);
       }
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.error("Error during logout:", error); // Log error
+      toast.error("An error occurred during logout");
     }
   };
+  
 
   return (
     // <div className={` ${mode === 'dark' ? 'dark' : 'light'} navbar bg-base-100 font-bold`}>
