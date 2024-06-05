@@ -1,6 +1,3 @@
-Sure, here's the README file with proper formatting:
-
-```markdown
 # OpenBlogs: A Place To Share Your Thoughts
 
 OpenBlogs is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) blog application designed to empower users to share their thoughts and ideas with the world. It incorporates user authentication and authorization using JWT (JSON Web Tokens) for secure access to the platform. The application features two types of users: authors and readers. Authors have access to a private dashboard where they can create, update, delete, and maintain their blog posts, along with visual representations through charts.
@@ -69,5 +66,5 @@ To run OpenBlogs locally, follow these steps:
    ```
 
 5. Open your browser and navigate to `http://localhost:3000` to access OpenBlogs locally.
-```
+
 
