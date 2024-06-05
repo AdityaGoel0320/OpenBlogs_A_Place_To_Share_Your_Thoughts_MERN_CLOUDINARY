@@ -4,6 +4,15 @@ OpenBlogs is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) blog app
 
 **Live Deployed Link:** [OpenBlogs](https://open-blogs-a-place-to-share-your-thoughts-mern-cloudinary.vercel.app/)
 
+
+## HomePage
+![sjifjdifdifd](https://github.com/AdityaGoel0320/OpenBlogs_A_Place_To_Share_Your_Thoughts_MERN_CLOUDINARY/assets/112582770/6c2cccfe-cd35-438b-87fa-547ae9e975b0)
+
+
+## Author Dashboard and many more features
+![dsjfbdufbgds](https://github.com/AdityaGoel0320/OpenBlogs_A_Place_To_Share_Your_Thoughts_MERN_CLOUDINARY/assets/112582770/a8fbfaf3-6382-4aa6-83cf-f523ef46f049)
+
+
 ## Features
 
 - **User Authentication**: Utilizes JWT for secure user authentication and authorization.
